@@ -40,7 +40,7 @@ namespace Yu_IT202WM_LABACT1_FINAL
                 lblServiceVal.Text = "P20.00";
                 lblTotalVal.Text = "P" + activeRecord.GetTotalAmount(0).ToString("N2");
             }
-            catch { MessageBox.Show("Please ensure all fields are filled correctly."); }
+            catch {MessageBox.Show("Please ensure all fields are filled correctly."); }
         }
     
     public class ParkingRecord
@@ -91,12 +91,12 @@ namespace Yu_IT202WM_LABACT1_FINAL
             rtbReceipt.Clear();
             rtbReceipt.SelectionAlignment = HorizontalAlignment.Center;
             rtbReceipt.AppendText("SMART PARKING SYSTEM\n");
-            rtbReceipt.AppendText("--------------------------\n");
+            rtbReceipt.AppendText("\n");
             rtbReceipt.AppendText($"Plate: {activeRecord.PlateNumber}\n");
             rtbReceipt.AppendText($"Type: {activeRecord.VehicleType}\n");
             rtbReceipt.AppendText($"Slot: {activeRecord.AssignedSlot}\n");
             rtbReceipt.AppendText($"Total Due: {lblTotalVal.Text}\n");
-            rtbReceipt.AppendText("--------------------------\n");
+            rtbReceipt.AppendText("\n");
             rtbReceipt.AppendText("Thank you for your business!");
         }
 
