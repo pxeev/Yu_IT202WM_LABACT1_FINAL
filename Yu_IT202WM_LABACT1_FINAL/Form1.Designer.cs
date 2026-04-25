@@ -125,7 +125,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(32, 53);
+            this.groupBox1.Location = new System.Drawing.Point(16, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 241);
             this.groupBox1.TabIndex = 0;
@@ -206,7 +206,7 @@
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(32, 310);
+            this.groupBox2.Location = new System.Drawing.Point(16, 282);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 226);
             this.groupBox2.TabIndex = 1;
@@ -275,7 +275,7 @@
             this.pnlParkingStatus.Controls.Add(this.button8);
             this.pnlParkingStatus.Controls.Add(this.button7);
             this.pnlParkingStatus.Controls.Add(this.button6);
-            this.pnlParkingStatus.Location = new System.Drawing.Point(257, 52);
+            this.pnlParkingStatus.Location = new System.Drawing.Point(241, 24);
             this.pnlParkingStatus.Name = "pnlParkingStatus";
             this.pnlParkingStatus.Size = new System.Drawing.Size(347, 484);
             this.pnlParkingStatus.TabIndex = 2;
@@ -680,7 +680,7 @@
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Location = new System.Drawing.Point(894, 53);
+            this.groupBox4.Location = new System.Drawing.Point(875, 105);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(220, 176);
             this.groupBox4.TabIndex = 3;
@@ -787,7 +787,7 @@
             this.groupBox5.Controls.Add(this.label17);
             this.groupBox5.Controls.Add(this.label16);
             this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Location = new System.Drawing.Point(894, 249);
+            this.groupBox5.Location = new System.Drawing.Point(875, 301);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(220, 130);
             this.groupBox5.TabIndex = 4;
@@ -869,7 +869,7 @@
             this.groupBox6.Controls.Add(this.label23);
             this.groupBox6.Controls.Add(this.cmbDiscount);
             this.groupBox6.Controls.Add(this.label22);
-            this.groupBox6.Location = new System.Drawing.Point(625, 53);
+            this.groupBox6.Location = new System.Drawing.Point(609, 25);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(245, 483);
             this.groupBox6.TabIndex = 5;
@@ -931,7 +931,7 @@
             // 
             // txtPayAmount
             // 
-            this.txtPayAmount.Location = new System.Drawing.Point(107, 49);
+            this.txtPayAmount.Location = new System.Drawing.Point(107, 50);
             this.txtPayAmount.Name = "txtPayAmount";
             this.txtPayAmount.Size = new System.Drawing.Size(121, 20);
             this.txtPayAmount.TabIndex = 22;
@@ -960,7 +960,7 @@
             this.cmbDiscount.Items.AddRange(new object[] {
             "Senior Citizen",
             "Employee"});
-            this.cmbDiscount.Location = new System.Drawing.Point(107, 20);
+            this.cmbDiscount.Location = new System.Drawing.Point(107, 21);
             this.cmbDiscount.Name = "cmbDiscount";
             this.cmbDiscount.Size = new System.Drawing.Size(121, 21);
             this.cmbDiscount.TabIndex = 9;
@@ -979,7 +979,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1144, 603);
+            this.ClientSize = new System.Drawing.Size(1115, 522);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
