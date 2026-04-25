@@ -19,31 +19,7 @@ namespace Yu_IT202WM_LABACT1_FINAL
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                activeRecord = new ParkingRecord(
-                    txtPlateNumber.Text,
-                    cmbVehicleType.SelectedItem.ToString(),
-                    int.Parse(txtHoursParked.Text),
-                    txtAssignedSlot.Text
-                );
-
-                lblPlateDisplay.Text = activeRecord.PlateNumber;
-                lblVehicleInfo.Text = activeRecord.VehicleType;
-                lblDuration.Text = activeRecord.HoursParked + " hrs";
-                lblSlotDisplay.Text = activeRecord.AssignedSlot;
-                lblOvertimeVal.Text = "P" + activeRecord.GetOvertimeFee().ToString("N2");
-
-                lblStandardVal.Text = "P" + activeRecord.GetStandardFee().ToString("N2");
-                lblServiceVal.Text = "P20.00";
-                lblTotalVal.Text = "P" + activeRecord.GetTotalAmount(0).ToString("N2");
-            }
-            catch {MessageBox.Show("Please ensure all fields are filled correctly."); }
-        }
-    
-    public class ParkingRecord
+        public class ParkingRecord
         {
             public string PlateNumber { get; set; }
             public string VehicleType { get; set; }
@@ -70,8 +46,8 @@ namespace Yu_IT202WM_LABACT1_FINAL
                 if (VehicleType == "Car") rate = CarRate;
                 else if (VehicleType == "Motorcycle") rate = MotorcycleRate;
                 else if (VehicleType == "Van") rate = VanRate;
-            
-            return rate * HoursParked;
+
+                return rate * HoursParked;
             }
 
             public double GetOvertimeFee()
@@ -86,18 +62,41 @@ namespace Yu_IT202WM_LABACT1_FINAL
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            rtbReceipt.Clear();
-            rtbReceipt.SelectionAlignment = HorizontalAlignment.Center;
-            rtbReceipt.AppendText("SMART PARKING SYSTEM\n");
-            rtbReceipt.AppendText("\n");
-            rtbReceipt.AppendText($"Plate: {activeRecord.PlateNumber}\n");
-            rtbReceipt.AppendText($"Type: {activeRecord.VehicleType}\n");
-            rtbReceipt.AppendText($"Slot: {activeRecord.AssignedSlot}\n");
-            rtbReceipt.AppendText($"Total Due: {lblTotalVal.Text}\n");
-            rtbReceipt.AppendText("\n");
-            rtbReceipt.AppendText("Thank you for your business!");
+            try
+            {
+                activeRecord = new ParkingRecord(
+                    txtPlateNumber.Text,
+                    cmbVehicleType.SelectedItem.ToString(),
+                    int.Parse(txtHoursParked.Text),
+                    txtAssignedSlot.Text
+                );
+
+                lblPlateDisplay.Text = activeRecord.PlateNumber;
+                lblVehicleInfo.Text = activeRecord.VehicleType;
+                lblDuration.Text = activeRecord.HoursParked + " hrs";
+                lblSlotDisplay.Text = activeRecord.AssignedSlot;
+                lblOvertimeVal.Text = "P" + activeRecord.GetOvertimeFee().ToString("N2");
+
+                lblStandardVal.Text = "P" + activeRecord.GetStandardFee().ToString("N2");
+                lblServiceVal.Text = "P20.00";
+                lblTotalVal.Text = "P" + activeRecord.GetTotalAmount(0).ToString("N2");
+            }
+            catch { MessageBox.Show("Please make sure all fields are filled correctly."); }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in pnlParkingStatus.Controls)
+            {
+                if (ctrl is Button btn && btn.Text == txtAssignedSlot.Text)
+                {
+                    btn.BackColor = Color.Red;
+                    btn.ForeColor = Color.White;
+                    btn.Text = txtPlateNumber.Text;
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -115,17 +114,41 @@ namespace Yu_IT202WM_LABACT1_FINAL
             lblTotalVal.Text = "P" + finalTotal.ToString("N2");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            foreach (Control ctrl in pnlParkingStatus.Controls)
-            {
-                if (ctrl is Button btn && btn.Text == txtAssignedSlot.Text)
-                {
-                    btn.BackColor = Color.Red;
-                    btn.ForeColor = Color.White;
-                    btn.Text = txtPlateNumber.Text;
-                }
-            }
+            rtbReceipt.Clear();
+            rtbReceipt.SelectionAlignment = HorizontalAlignment.Center;
+            rtbReceipt.AppendText("SMART PARKING SYSTEM\n");
+            rtbReceipt.AppendText("\n");
+            rtbReceipt.AppendText($"Plate No.: {activeRecord.PlateNumber}\n");
+            rtbReceipt.AppendText($"Type of Vehicle: {activeRecord.VehicleType}\n");
+            rtbReceipt.AppendText($"Slot: {activeRecord.AssignedSlot}\n");
+            rtbReceipt.AppendText($"Total: {lblTotalVal.Text}\n");
+            rtbReceipt.AppendText("\n");
+            rtbReceipt.AppendText("Thank you!");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            txtPlateNumber.Clear();
+            txtHoursParked.Clear();
+            txtAssignedSlot.Clear();
+
+            rtbReceipt.Clear();
+
+
+            txtPayAmount.Clear();
+            lblChangeVal.Text = "__________";
+
+            lblPlateDisplay.Text = "__________";
+            lblVehicleInfo.Text = "__________";
+            lblDuration.Text = "__________";
+            lblSlotDisplay.Text = "__________";
+            lblOvertimeVal.Text = "__________";
+
+            lblStandardVal.Text = "__________";
+            lblServiceVal.Text = "__________";
+            lblTotalVal.Text = "__________";
         }
     }
 }
